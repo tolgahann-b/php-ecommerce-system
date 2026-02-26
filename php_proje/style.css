@@ -1,0 +1,581 @@
+/* WHITE & RED PREMIUM THEME */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+/* Google Font: Inter */
+
+:root {
+    /* Global CSS Değişkenleri */
+    --primary: #D32F2F;
+    /* Koyu Kırmızı - Ana Renk */
+    --primary-bright: #FF5252;
+    /* Parlak Kırmızı - Vurgular için */
+    --bg-body: #F5F7FA;
+    /* Sayfa Arkaplanı - Açık Gri */
+    --bg-card: #FFFFFF;
+    /* Kart/Kutu Arkaplanı - Beyaz */
+    --text-dark: #212121;
+    /* Koyu Metin Rengi */
+    --text-gray: #757575;
+    /* Gri Metin Rengi (Yardımcı yazılar) */
+    --border-color: #E0E0E0;
+    /* Kenarlık Rengi */
+    --input-bg: #FFFFFF;
+    /* Input Arkaplanı */
+    --input-border: #CCCCCC;
+    /* Input Kenarlığı */
+}
+
+/* STICKY FOOTER & RESET */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-body);
+    /* Arkaplan rengini değişkenden al */
+    color: var(--text-dark);
+    /* Metin rengi */
+    font-family: 'Inter', sans-serif;
+    /* Yazı tipi */
+
+    /* Margin/Padding Sıfırlama */
+    margin: 0 !important;
+    padding: 0 !important;
+
+    /* STICKY FOOTER İÇİN */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Satır yüksekliği */
+    line-height: 1.6;
+}
+
+/* Footer'ı en alta itmek için */
+footer {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    /* Alt boşluğu sıfırla */
+    width: 100%;
+    /* Tam genişlik */
+}
+
+/* --- NAVBAR (ÜST MENÜ) STİLLERİ --- */
+.navbar {
+    background-color: #FFFFFF !important;
+    /* Arkaplan beyaz */
+    border-bottom: 3px solid var(--primary);
+    /* Altına kırmızı çizgi */
+    padding: 15px 0;
+    /* Dikey boşluk */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Hafif gölge */
+}
+
+.navbar-brand {
+    font-weight: 800;
+    /* Kalın font */
+    font-size: 1.5rem;
+    /* Büyük boy */
+    color: var(--primary) !important;
+    /* Kırmızı renk */
+    text-transform: uppercase;
+    /* Hepsi büyük harf */
+    letter-spacing: 1px;
+    /* Harf aralığı */
+}
+
+.nav-link {
+    color: var(--text-gray) !important;
+    /* Gri renk */
+    font-weight: 600;
+    /* Yarı kalın */
+    transition: color 0.3s;
+    /* Renk geçiş efekti */
+    font-size: 1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    /* Üzerine gelince veya aktifse */
+    color: var(--primary) !important;
+    /* Kırmızı yap */
+}
+
+/* --- NAVBAR BUTON HİZALAMA --- */
+.navbar .btn {
+    height: 48px;
+    /* Sabit yükseklik */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px !important;
+    /* Dikey paddingi sıfırla, yatayı koru */
+}
+
+/* --- KUTU VE KONTEYNER YAPILARI --- */
+.kutu {
+    background-color: var(--bg-card);
+    /* Beyaz arkaplan */
+    border: 1px solid var(--border-color);
+    /* İnce kenarlık */
+    border-radius: 12px;
+    /* Köşeleri yuvarla */
+    padding: 40px;
+    /* İç boşluk */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* Derinlik gölgesi */
+    margin-bottom: 20px;
+    /* Alt boşluk */
+}
+
+/* --- BAŞLIK STİLLERİ --- */
+h1,
+h2,
+h3,
+h4,
+.display-4,
+.baslik {
+    color: var(--text-dark);
+    /* Koyu renk */
+    font-weight: 700;
+    /* Kalın */
+}
+
+.baslik {
+    /* Özel başlık sınıfı */
+    position: relative;
+    /* Alt çizgi pozisyonu için */
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #EEEEEE;
+    /* Gri alt çizgi */
+}
+
+.baslik::after {
+    /* Başlığın altındaki kırmızı kısa çizgi */
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    /* Çizginin üstüne binmesi için */
+    left: 0;
+    width: 70px;
+    /* Genişlik */
+    height: 4px;
+    /* Kalınlık */
+    background-color: var(--primary);
+    /* Kırmızı */
+    border-radius: 2px;
+}
+
+/* Başlığı Ortalamak İçin Yardımcı */
+.baslik-center {
+    text-align: center;
+}
+
+.baslik-center::after {
+    /* Çizgiyi de ortala */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- FORM ELEMANLARI --- */
+.form-label {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: #000000 !important;
+    /* Yazı rengi siyah */
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    /* Tıklanınca */
+    background-color: #FFFFFF;
+    border-color: var(--primary);
+    /* Kırmızı kenarlık */
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+    /* Kırmızı glow efekti */
+    color: #000000 !important;
+}
+
+.form-control::placeholder {
+    /* Placeholder rengi */
+    color: #999;
+}
+
+.input-group-text {
+    /* Input yanındaki ikon kutusu */
+    background-color: #F5F5F5 !important;
+    border-color: var(--input-border) !important;
+    color: var(--text-gray);
+}
+
+/* --- BUTONLAR --- */
+.btn-primary-custom,
+.btn-danger {
+    /* Özel Ana Buton ve Danger (Çıkış) Butonu */
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    /* Animasyon süresi */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(211, 47, 47, 0.2);
+}
+
+.btn-primary-custom:hover,
+.btn-danger:hover {
+    /* Hover durumu */
+    background-color: #b71c1c;
+    /* Daha koyu kırmızı */
+    transform: translateY(-2px);
+    /* Yukarı kalkma efekti */
+    box-shadow: 0 6px 12px rgba(211, 47, 47, 0.3);
+    /* Gölge büyümesi */
+    color: white;
+}
+
+.btn-outline-light {
+    /* Şeffaf buton */
+    border-color: var(--primary);
+    color: var(--primary);
+    padding: 12px 24px;
+    /* Boyut eşitleme için eklendi */
+    border-radius: 8px;
+    /* Stil bütünlüğü */
+    font-weight: 700;
+    /* Kalınlık eşitleme */
+}
+
+.btn-outline-light:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* --- DROPDOWN MENÜ --- */
+.dropdown-menu {
+    background-color: white;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: var(--text-dark);
+}
+
+.dropdown-item:hover {
+    background-color: #fafafa;
+    color: var(--primary);
+}
+
+/* --- TABLOLAR --- */
+.table {
+    color: var(--text-dark);
+}
+
+.table thead th {
+    border-bottom: 2px solid var(--primary);
+    /* Başlık altı kırmızı çizgi */
+    color: var(--primary);
+}
+
+.table td {
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    /* Dikey ortala */
+}
+
+/* --- UYARI KUTULARI (ALERTS) --- */
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.alert-success {
+    /* Başarılı */
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border-left: 5px solid #2e7d32;
+    /* Sol kenar çizgisi */
+}
+
+.alert-danger {
+    /* Hata */
+    background-color: #ffebee;
+    color: #b71c1c;
+    border-left: 5px solid #c62828;
+}
+
+.alert-info {
+    /* Bilgi */
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border-left: 5px solid #1976d2;
+}
+
+.alert-warning {
+    /* Uyarı */
+    background-color: #fff8e1;
+    color: #f57f17;
+    border-left: 5px solid #fbc02d;
+}
+
+/* --- GENEL LİNKLER --- */
+a {
+    text-decoration: none;
+    /* Alt çizgiyi kaldır */
+}
+
+hr {
+    /* Yatay Ayırıcı */
+    border-color: #EEE;
+    opacity: 1;
+}
+
+/* =========================================
+   RESPONSIVE TASARIM - MEDIA QUERIES
+   ========================================= */
+
+/* Viewport meta tag için gerekli */
+/* HTML head içine eklenmeli: <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+/* --- EKSTRA KÜÇÜK CİHAZLAR (max 575px - Telefonlar) --- */
+@media (max-width: 575.98px) {
+    /* Kutu iç boşluğunu azalt */
+    .kutu {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+    
+    /* Başlık boyutlarını küçült */
+    .display-4 {
+        font-size: 1.75rem !important;
+    }
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.35rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1.1rem; }
+    
+    /* Navbar butonları tam genişlik */
+    .navbar .d-flex {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .navbar .btn {
+        width: 100%;
+        margin: 5px 0 !important;
+    }
+    
+    .navbar .dropdown {
+        width: 100%;
+    }
+    
+    .navbar .dropdown .btn {
+        width: 100%;
+    }
+    
+    /* Form ve buton boyutları */
+    .btn-lg {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .form-control {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Tablo responsive */
+    .table-responsive {
+        font-size: 0.85rem;
+    }
+    
+    .table td, .table th {
+        padding: 8px 6px;
+    }
+    
+    /* Container padding */
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    /* Footer font boyutu */
+    footer p {
+        font-size: 0.85rem;
+    }
+    
+    footer h5 {
+        font-size: 1rem;
+    }
+    
+    /* Alert kutuları */
+    .alert {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Sosyal medya butonları */
+    footer .btn {
+        width: 36px;
+        height: 36px;
+        padding: 0 !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* --- KÜÇÜK CİHAZLAR (576px - 767px - Büyük Telefonlar/Küçük Tabletler) --- */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .kutu {
+        padding: 25px 20px;
+    }
+    
+    .display-4 {
+        font-size: 2rem !important;
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    
+    /* Navbar düzeni */
+    .navbar .d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* --- ORTA BOY CİHAZLAR (768px - 991px - Tabletler) --- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .kutu {
+        padding: 30px 25px;
+    }
+    
+    .display-4 {
+        font-size: 2.25rem !important;
+    }
+    
+    /* Navbar brand biraz küçült */
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 8px 10px !important;
+    }
+    
+    /* Kart düzeni için uyum */
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
+
+/* --- BÜYÜK CİHAZLAR (992px - 1199px - Küçük Masaüstü/Laptoplar) --- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .kutu {
+        padding: 35px 30px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.35rem;
+    }
+}
+
+/* --- EKSTRA BÜYÜK EKRANLAR (1200px ve üzeri) --- */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .kutu {
+        padding: 40px;
+    }
+}
+
+/* --- NAVBAR TOGGLER GÖRÜNÜRLÜK DÜZELTMESİ --- */
+.navbar-toggler {
+    border: 2px solid var(--primary);
+    padding: 6px 10px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D32F2F' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.25);
+}
+
+/* --- FIXED NAVBAR İÇİN BODY PADDING --- */
+body {
+    padding-top: 80px;
+}
+
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 70px;
+    }
+}
+
+/* --- TABLO RESPONSIVE WRAPPER --- */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- GÖRSEL VE MEDYA OBJELERİ --- */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- TOUCH CİHAZLAR İÇİN HOVER DEVRE DIŞI --- */
+@media (hover: none) {
+    .btn-primary-custom:hover,
+    .btn-danger:hover {
+        transform: none;
+    }
+}
+
+/* --- YAZDIR MODU --- */
+@media print {
+    .navbar, footer, .btn {
+        display: none !important;
+    }
+    
+    body {
+        padding-top: 0;
+    }
+    
+    .kutu {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
